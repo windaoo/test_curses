@@ -26,13 +26,11 @@ class main_win(object):
         self.win.scrollok(True)
         #self.win = curses.newwin(maxy-1, maxx, 0, 0)
         self.win.erase()
-        self.__addstr(self.text)
+        for s, e in self.text:
+            self.__addstr(s, e)
 
     def addstr(self, s, iserror):
-        if iserror:
-            self.text.append(s)
-        else:
-            self.text.
+        self.text.append((s, iserror,))
         self.__addstr(s, iserror)
 
 class status_bar(object):
